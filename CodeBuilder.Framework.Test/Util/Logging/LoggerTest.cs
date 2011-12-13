@@ -27,6 +27,7 @@ namespace CodeBuilder.Util.Test
         {
             logger.Info("Info");
             logger.Error("Error");
+            logger.Debug("Debug");
         }
 
         [TearDown]
