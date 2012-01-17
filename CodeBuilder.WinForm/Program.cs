@@ -5,17 +5,46 @@ using System.Windows.Forms;
 
 namespace CodeBuilder.WinForm
 {
+    using UI;
+    using Util;
+    using Configuration;
+
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        static Logger logger = InternalTrace.GetLogger(typeof(Program));
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            try
+            {
+                InitializeTraceLevel();
+
+                AppContainer container = new AppContainer();
+                MainForm form = new MainForm();
+                container.Add(form);
+
+                logger.Info("Starting CodeBuilder");
+                Application.Run(form);
+                logger.Info("CodeBuilder Exit"); 
+            }
+            catch (Exception ex)
+            {
+                logger.Error("Startup", ex);
+                MessageBoxHelper.DisplayFailure(ex.Message);
+            }
+
+            InternalTrace.Close();
+        }
+
+        static void InitializeTraceLevel()
+        {
+            string traceLevel = ConfigManager.OptionSection.Options["Options.InternalTraceLevel"].Value;
+            InternalTraceLevel level =  (InternalTraceLevel)Enum.Parse(InternalTraceLevel.Default.GetType(), traceLevel, true);
+            InternalTrace.Initialize("CodeBuilder_%p.log", level);
         }
     }
 }

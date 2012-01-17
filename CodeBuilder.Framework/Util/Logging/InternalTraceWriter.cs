@@ -4,10 +4,6 @@ using System.IO;
 
 namespace CodeBuilder.Util
 {
-	/// <summary>
-	/// A trace listener that writes to a separate file per domain
-	/// and process using it.
-	/// </summary>
 	public class InternalTraceWriter : TextWriter
 	{
         StreamWriter writer;
@@ -19,7 +15,7 @@ namespace CodeBuilder.Util
             {
                 if (logDirectory == null)
                 {
-                    logDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs");
+                    logDirectory = Path.Combine(Environment.CurrentDirectory, "Logs");
                     if (!Directory.Exists(logDirectory))
                         Directory.CreateDirectory(logDirectory);
                 }
@@ -29,13 +25,10 @@ namespace CodeBuilder.Util
 
 		public InternalTraceWriter(string logName)
 		{
-			int pId = Process.GetCurrentProcess().Id;
-			string domainName = AppDomain.CurrentDomain.FriendlyName;
+            //int pId = Process.GetCurrentProcess().Id;
+            //string domainName = AppDomain.CurrentDomain.FriendlyName;
 
-			string fileName = logName
-				.Replace("%p", pId.ToString() )
-				.Replace("%a", domainName );
-
+            string fileName = logName.Replace("%p", DateTime.Now.ToString("yyyy-MM-dd"));
             string logPath = Path.Combine(LogDirectory, fileName);
             this.writer = new StreamWriter(logPath, true);
             this.writer.AutoFlush = true;
