@@ -1,61 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
 using System.Text.RegularExpressions;
+using System.Xml;
 
-namespace CodeBuilder.DataSource.Exporter.PowerDesigner
+namespace CodeBuilder.DataSource.Exporter
 {
-    using PhysicalDataModel;
-    using TypeMapping;
+    using Configuration;
     using Exceptions;
+    using PhysicalDataModel;
+    using Util;
 
     public class PowerDesigner12Exporter : BaseExporter,IExporter
     {
-        private ExportConfig _config;
+        #region IExporter Members
 
-        #region IExporter 成员
-
-        public override Model Export(ExportConfig config)
+        public override Model Export(string connectionString)
         {
-            if (config == null)
-                throw new ArgumentNullException("config", "参数不能为null");
-            this._config = config;
+            if (connectionString == null)
+                throw new ArgumentNullException("connectionString", "Argument is null");
 
-            //加载PowerDesigner数据模型文件
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(config.ConnectionString);
+            xmlDoc.Load(connectionString);
             XmlElement root = xmlDoc.DocumentElement;
-            this._config.Database = this.GetDatabase(root);
 
-            //获取模型文件中table与view结点集合。
+            Model model = new Model();
+            model.Database = this.GetDatabase(root);
+
             XmlNodeList tableNodes = root.GetElementsByTagName("c:Tables");
             XmlNodeList viewNodes = root.GetElementsByTagName("c:Views");
 
-            Tables tables = null;
-            Views views = null;
-
-            //导出模型中的表对象集合
             if (tableNodes != null &&
-                tableNodes[0] != null) tables = this.GetTables(tableNodes[0].ChildNodes);
-
-            //导出模型中的视图对象集合
+                tableNodes[0] != null) model.Tables = this.GetTables(tableNodes[0].ChildNodes);
             if (viewNodes != null &&
-                viewNodes[0] != null) views = this.GetViews(viewNodes[0].ChildNodes);
+                viewNodes[0] != null) model.Views = this.GetViews(viewNodes[0].ChildNodes);
 
-            return (tables != null || views != null) ? new Model(tables, views) : null;
+            return model;
         }
 
         #endregion
 
-        #region 私有成员
+        #region Private Members
 
-        /// <summary>
-        /// 导出模型文件中的表对象集合。
-        /// </summary>
-        /// <param name="tableNodes">模型文件中table结点集合</param>
-        /// <returns>表对象集合</returns>
         private Tables GetTables(XmlNodeList tableNodes)
         {
             if (tableNodes == null || 
@@ -64,13 +48,13 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             Tables tables = new Tables(tableNodes.Count);
             foreach (XmlNode tableNode in tableNodes)
             {
-                //获取表对象的相关属性
                 string id = tableNode.Attributes["Id"].InnerText;
-                string name = tableNode["a:Name"].InnerText;
-                string code = tableNode["a:Code"].InnerText;
+                string displayName = tableNode["a:Name"].InnerText;
+                string name = tableNode["a:Code"].InnerText;
                 string comment = tableNode["a:Comment"] != null ? tableNode["a:Comment"].InnerText : string.Empty;
 
-                Table table = new Table(id, name, code, comment);
+                Table table = new Table(id, displayName, name, comment);
+                table.OriginalName = name;
                 table.Columns = this.GetColumns(tableNode);
                 table.PrimaryKeys = this.GetPrimaryKeys(tableNode, table.Columns);
                 tables.Add(id, table);
@@ -79,11 +63,6 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             return tables;
         }
 
-        /// <summary>
-        /// 导出模型文件中的视图对象集合。
-        /// </summary>
-        /// <param name="viewNodes">模型文件中view结点集合</param>
-        /// <returns>视图对象集合</returns>
         private Views GetViews(XmlNodeList viewNodes)
         {
             if (viewNodes == null || 
@@ -92,13 +71,13 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             Views views = new Views(viewNodes.Count);
             foreach (XmlNode viewNode in viewNodes)
             {
-                //获取视图对象的相关属性
                 string id = viewNode.Attributes["Id"].InnerText;
-                string name = viewNode["a:Name"].InnerText;
-                string code = viewNode["a:Code"].InnerText;
+                string displayName = viewNode["a:Name"].InnerText;
+                string name = viewNode["a:Code"].InnerText;
                 string comment = viewNode["a:Comment"] != null ? viewNode["a:Comment"].InnerText : string.Empty;
 
-                View view = new View(id, name, code, comment);
+                View view = new View(id, displayName, name, comment);
+                view.OriginalName = name;
                 view.Columns = this.GetColumns(viewNode);
                 views.Add(id, view);
             }
@@ -106,11 +85,6 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             return views;
         }
 
-        /// <summary>
-        /// 导出模型文件中的表或视图对象的列集合。
-        /// </summary>
-        /// <param name="columnsNode">模型文件中table或view结点的columns结点</param>
-        /// <returns>表或视图对象的列集合</returns>
         private Columns GetColumns(XmlNode tableOrViewNode)
         {
             XmlNode columnsNode = tableOrViewNode["c:Columns"];
@@ -121,10 +95,9 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             Columns columns = new Columns(columnNodes.Count);
             foreach (XmlNode columnNode in columnNodes)
             {
-                //获取表或视图的列对象相关属性
                 string id = columnNode.Attributes["Id"].InnerText;
-                string name = columnNode["a:Name"].InnerText;
-                string code = columnNode["a:Code"].InnerText;
+                string displayName = columnNode["a:Name"].InnerText;
+                string name = columnNode["a:Code"].InnerText;
                 string comment = columnNode["a:Comment"] != null ? columnNode["a:Comment"].InnerText : string.Empty;
                 string dataType = columnNode["a:DataType"] != null ? columnNode["a:DataType"].InnerText : string.Empty;
                 string length = columnNode["a:Length"] != null ? columnNode["a:Length"].InnerText : "0";
@@ -132,31 +105,19 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
                 string mandatory = columnNode["a:Mandatory"] != null ? columnNode["a:Mandatory"].InnerText : string.Empty;
                 string defaultValue = columnNode["a:DefaultValue"] != null ? columnNode["a:DefaultValue"].InnerText : string.Empty;
 
-                Column column = new Column(id, name, code, dataType, comment);
+                Column column = new Column(id, displayName, name, dataType, comment);
                 column.Length = Int32.Parse(length);
                 column.IsAutoIncremented = identity.Equals("1");
                 column.IsNullable = mandatory.Equals("1");
-                column.DefaultValue = defaultValue;
-
-                //把列的数据类型转换成对应程序设计语言的数据类型
-                string dataTypeName = Regex.Replace(column.DataType, "\\(.*?\\)", "");
-                LanguageType langType = TypeMapperFactory.Creator().GetLanguageType(
-                    this._config.Database,
-                    this._config.Language, dataTypeName);
-                column.LanguageType = langType.TypeName;
-                column.LanguageDefaultValue = langType.DefaultValue;
+                column.DefaultValue = defaultValue.ToEmpty();
+                column.DataType = Regex.Replace(column.DataType, "\\(.*?\\)", "");
+                column.OriginalName = name;
                 columns.Add(id, column);
             }
 
             return columns;
         }
 
-        /// <summary>
-        /// 导出模型文件中的表象的键集合。
-        /// </summary>
-        /// <param name="tableNode">模型文件中table结点</param>
-        /// <param name="tableColumns">当前表中所有的列对象集合</param>
-        /// <returns>表对象的键集合</returns>
         private Columns GetKeys(XmlNode tableNode, Columns tableColumns)
         {
             XmlNode keysNode = tableNode["c:Keys"];
@@ -171,7 +132,6 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             Columns keys = new Columns(keyColumnNodes.Count);
             foreach (XmlNode keyColumnNode in keyColumnNodes)
             {
-                //获取表对象的键标识
                 string id = keyColumnNode.Attributes["Ref"].InnerText;
                 if (!tableColumns.ContainsKey(id)) continue;
                 keys.Add(id, tableColumns[id]);
@@ -180,12 +140,6 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             return keys;
         }
 
-        /// <summary>
-        /// 导出模型文件中的表对象的主键集合。
-        /// </summary>
-        /// <param name="keysNode">模型文件中table结点</param>
-        /// <param name="tableColumns">当前表中所有的列对象集合</param>
-        /// <returns>表对象的主键集合</returns>
         private Columns GetPrimaryKeys(XmlNode tableNode, Columns tableColumns)
         {
             XmlNode xmlNode = tableNode["c:PrimaryKey"];
@@ -209,11 +163,13 @@ namespace CodeBuilder.DataSource.Exporter.PowerDesigner
             XmlNodeList targetModelNodes = root.GetElementsByTagName("o:TargetModel");
             if (targetModelNodes == null ||
                 targetModelNodes.Count == 0)
-            {
-                throw new NotSetDatabaseException();
-            }
+                throw new NotFoundPdmDBMSException();
 
-            return targetModelNodes[0]["a:Code"].InnerText.Trim();
+            string dbmsName = targetModelNodes[0]["a:Code"].InnerText.Trim().ToLower();
+            if (ConfigManager.SettingsSection.PdmDatabases[dbmsName] == null)
+                throw new NotSupportDatabaseException();
+
+            return ConfigManager.SettingsSection.PdmDatabases[dbmsName].Database;
         }
 
         #endregion
