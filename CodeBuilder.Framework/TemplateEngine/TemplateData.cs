@@ -11,6 +11,7 @@ namespace CodeBuilder.TemplateEngine
 
     public class TemplateData
     {
+        private string _date;
         private string _name;
         private string _language;
         private string _database;
@@ -26,14 +27,18 @@ namespace CodeBuilder.TemplateEngine
         private string _templateFileName;
         private string _codeFileName;
         private bool _isOmitTablePrefix;
-        private bool _isStandardizeName;
+        private bool _isCamelCaseName;
         private object _modelObject;
 
-        public TemplateData() { }
+        public TemplateData()
+        {
+            this._date = DateTime.Now.ToString("yyyy-MM-dd");
+        }
 
-        public TemplateData(string name,string language, string database,string templateEngine, string package,
-            string tablePrefix, string author, string version, string templateName,string prefix,string suffix,
-            string encoding,string templateFileName,string codeFileName,bool isOmitTablePrefix, bool isStandardizeName,object modelObject)
+        public TemplateData(string name, string language, string database, string templateEngine, string package,
+            string tablePrefix, string author, string version, string templateName, string prefix, string suffix,
+            string encoding, string templateFileName, string codeFileName, bool isOmitTablePrefix,
+            bool isCamelCaseName, object modelObject) : base()
         {
             this._name = name;
             this._language = language;
@@ -50,14 +55,29 @@ namespace CodeBuilder.TemplateEngine
             this._templateFileName = templateFileName;
             this._codeFileName = codeFileName;
             this._isOmitTablePrefix = isOmitTablePrefix;
-            this._isStandardizeName = isStandardizeName;
+            this._isCamelCaseName = isCamelCaseName;
             this._modelObject = modelObject;
+        }
+
+        public string Date
+        {
+            get { return this._date; }
+            set { this._date = value; }
         }
 
         public string Name
         {
             get { return this._name; }
             set { this._name = value; }
+        }
+
+        public string LowerCamelName
+        {
+            get
+            {
+                var name = this._name ?? string.Empty;
+                return name.LowerCamelCaseName();
+            }
         }
 
         public string Language
@@ -110,7 +130,7 @@ namespace CodeBuilder.TemplateEngine
 
         public string Prefix
         {
-            get { return this._prefix ?? string.Empty ; }
+            get { return this._prefix ?? string.Empty; }
             set { this._prefix = value; }
         }
 
@@ -144,10 +164,10 @@ namespace CodeBuilder.TemplateEngine
             set { this._isOmitTablePrefix = value; }
         }
 
-        public bool IsStandardizeName
+        public bool IsCamelCaseName
         {
-            get { return this._isStandardizeName; }
-            set { this._isStandardizeName = value; }
+            get { return this._isCamelCaseName; }
+            set { this._isCamelCaseName = value; }
         }
 
         public object ModelObject

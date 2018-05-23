@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace CodeBuilder.TemplateEngine
 {
@@ -77,11 +78,11 @@ namespace CodeBuilder.TemplateEngine
             templateData.TemplateEngine = settings.TemplateEngine;
             templateData.Encoding = settings.Encoding;
             templateData.IsOmitTablePrefix = settings.IsOmitTablePrefix;
-            templateData.IsStandardizeName = settings.IsStandardizeName;
+            templateData.IsCamelCaseName = settings.IsCamelCaseName;
             templateData.Prefix = ConfigManager.TemplateSection.Templates[templateName].Prefix;
             templateData.Suffix = ConfigManager.TemplateSection.Templates[templateName].Suffix;
             templateData.Name = GetTemplateDataName(settings.IsOmitTablePrefix,
-               settings.IsStandardizeName, settings.TablePrefix, modelObject.OriginalName);
+               settings.IsCamelCaseName, settings.TablePrefix, modelObject.OriginalName);
 
             templateData.TemplateFileName = Path.Combine(ConfigManager.TemplatePath,
                 ConfigManager.TemplateSection.Templates[templateName].FileName);
@@ -93,27 +94,26 @@ namespace CodeBuilder.TemplateEngine
                 ConfigManager.SettingsSection.Languages[settings.Language].Extension);
 
             modelObject.Name = templateData.Name;
-            templateData.ModelObject = GetStandardizedModelObject(modelObject, database, settings);
+            templateData.ModelObject = GetCamelCaseModelObject(modelObject, database, settings);
 
             return templateData;
         }
 
-        private static string GetTemplateDataName(bool isOmitPrefix, bool isStandardName, string tablePrefix, string name)
+        private static string GetTemplateDataName(bool isOmitPrefix, bool isCamelCaseName, string tablePrefix, string name)
         {
-            if (isOmitPrefix) name = name.TrimStart(tablePrefix.ToCharArray());
-            if (isStandardName) name = name.StandardizeName();
-
+            if (isOmitPrefix && (tablePrefix ?? "").Length > 0) name = Regex.Replace(name, tablePrefix, "");
+            if (isCamelCaseName) name = name.CamelCaseName();
             return name;
         }
 
-        private static T GetStandardizedModelObject<T>(T modelObject,string database,GenerationSettings settings)
+        private static T GetCamelCaseModelObject<T>(T modelObject,string database,GenerationSettings settings)
             where T : BaseTable, IMetaData
         {
-            bool isStandardizeName = settings.IsStandardizeName;
+            bool isCamelCaseName = settings.IsCamelCaseName;
             bool isDynamicLanguage = ConfigManager.SettingsSection.Languages[settings.Language].IsDynamic;
             string languageAlias = ConfigManager.SettingsSection.Languages[settings.Language].Alias;
 
-            if (!isStandardizeName && isDynamicLanguage) return modelObject;
+            if (!isCamelCaseName && isDynamicLanguage) return modelObject;
 
             ITypeMapper typeMapper = null;
             if (!isDynamicLanguage) typeMapper = TypeMapperFactory.Creator();
@@ -121,13 +121,14 @@ namespace CodeBuilder.TemplateEngine
 
             foreach (var column in modelObject.Columns.Values)
             {
-                if (isStandardizeName) column.Name = column.OriginalName.StandardizeName();
+                if (isCamelCaseName) column.Name = column.OriginalName.CamelCaseName();
                 if (typeMapper != null)
                 {
                     LanguageType langType = typeMapper.GetLanguageType(typeMappingDatabase, languageAlias, column.DataType);
                     if (langType == null) continue;
                     column.LanguageType = langType.TypeName;
                     column.LanguageDefaultValue = string.IsNullOrEmpty(column.DefaultValue) ? langType.DefaultValue : column.DefaultValue;
+                    column.LanguageTypeAlias = langType.Alias;
                 }
             }
 

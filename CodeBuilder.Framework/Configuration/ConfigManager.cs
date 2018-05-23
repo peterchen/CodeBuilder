@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Reflection;
 using System.Configuration;
+using System.IO;
 
 namespace CodeBuilder.Configuration
 {
-    using Util;
-    using Exceptions;
+    using Framework.Properties;
 
     public class ConfigManager
     {
@@ -196,7 +189,7 @@ namespace CodeBuilder.Configuration
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException("Save configuration failure", ex);
+                throw new ConfigurationErrorsException(Resource.SaveConfigurationFailure, ex);
             }
         }
 
@@ -212,7 +205,7 @@ namespace CodeBuilder.Configuration
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException("Load configuration failure", ex);
+                throw new ConfigurationErrorsException(Resource.LoadConfigurationFailure, ex);
             }
         }
 
@@ -224,7 +217,7 @@ namespace CodeBuilder.Configuration
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException(string.Format("ConfigurationSection {0} load failure", name), ex);
+                throw new ConfigurationErrorsException(string.Format(Resource.ConfigurationSectionLoadFailure, name), ex);
             }
         }
 

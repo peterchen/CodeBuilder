@@ -29,7 +29,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SourceAnalysisOverrideSettingsFile>C:\Users\TomDeng\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <NoStdLib>False</NoStdLib>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
@@ -153,6 +152,14 @@
     </Compile>
     <Compile Include="UI\Helpers\ExportModelHelper.cs" />
     <Compile Include="UI\Helpers\MessageBoxHelper.cs" />
+    <EmbeddedResource Include="MainForm.zh-CN.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,16 +176,37 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Forms\AboutBox.zh-CN.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\BaseOptionsDialog.zh-CN.resx">
+      <DependentUpon>BaseOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\BaseOptionsPage.zh-CN.resx">
+      <DependentUpon>BaseOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\OptionsPages\CodeGeneralOptionsPage.zh-CN.resx">
+      <DependentUpon>CodeGeneralOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\OptionsPages\DataSourceOptionsPage.resx">
       <DependentUpon>DataSourceOptionsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\OptionsPages\CodeGeneralOptionsPage.resx">
       <DependentUpon>CodeGeneralOptionsPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\OptionsPages\DataSourceOptionsPage.zh-CN.resx">
+      <DependentUpon>DataSourceOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\OptionsPages\RecentFilesOptionsPage.resx">
       <DependentUpon>RecentFilesOptionsPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\OptionsPages\RecentFilesOptionsPage.zh-CN.resx">
+      <DependentUpon>RecentFilesOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\OptionsPages\TemplateOptionsPage.resx">
+      <DependentUpon>TemplateOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\OptionsPages\TemplateOptionsPage.zh-CN.resx">
       <DependentUpon>TemplateOptionsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\OptionsPages\TraceOptionsPage.resx">
@@ -190,7 +218,13 @@
     <EmbeddedResource Include="UI\Forms\BaseOptionsPage.resx">
       <DependentUpon>BaseOptionsPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\OptionsPages\TraceOptionsPage.zh-CN.resx">
+      <DependentUpon>TraceOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\TreeOptionsDialog.resx">
+      <DependentUpon>TreeOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\TreeOptionsDialog.zh-CN.resx">
       <DependentUpon>TreeOptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
@@ -203,6 +237,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Templates\java\NVelocity\lombok-pojo.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-example.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-sharding-service.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-sharding-service-impl.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-sharding-repository.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-repository.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-controller.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-service-impl.nv" />
+    <None Include="Templates\java\NVelocity\mybatis-service.nv" />
+    <None Include="Templates\mybatisMapper\NVelocity\mybatis-sharding-mapper.nv">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Templates\mybatisMapper\NVelocity\mybatis-mapper.nv">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Images\cb.bmp" />
@@ -215,7 +264,9 @@
     <ConfigFile Include="Config\DataSources.xml" />
     <ConfigFile Include="Config\Options.xml" />
     <ConfigFile Include="Config\Templates.xml" />
-    <ConfigFile Include="Config\Settings.xml" />
+    <ConfigFile Include="Config\Settings.xml">
+      <SubType>Designer</SubType>
+    </ConfigFile>
     <ConfigFile Include="Config\TypeMapping.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -241,15 +292,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Templates Include="Templates\**\*.*" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CodeBuilder.Framework\CodeBuilder.Framework.csproj">
       <Project>{1FDA5B2E-BD7D-4BB1-9579-C25130156A43}</Project>
       <Name>CodeBuilder.Framework</Name>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

@@ -120,22 +120,187 @@
   <metadata name="checkFilesExistCheckBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkFilesExistCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkFilesExistCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 72</value>
+  </data>
+  <data name="checkFilesExistCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 17</value>
+  </data>
+  <data name="checkFilesExistCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkFilesExistCheckBox.Text" xml:space="preserve">
+    <value>Check that files exist before listing</value>
+  </data>
+  <data name="&gt;&gt;checkFilesExistCheckBox.Name" xml:space="preserve">
+    <value>checkFilesExistCheckBox</value>
+  </data>
+  <data name="&gt;&gt;checkFilesExistCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkFilesExistCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkFilesExistCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="filesInMenuLbl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="filesInMenuLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 33</value>
+  </data>
+  <data name="filesInMenuLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 24</value>
+  </data>
+  <data name="filesInMenuLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="filesInMenuLbl.Text" xml:space="preserve">
+    <value>files in menu</value>
+  </data>
+  <data name="&gt;&gt;filesInMenuLbl.Name" xml:space="preserve">
+    <value>filesInMenuLbl</value>
+  </data>
+  <data name="&gt;&gt;filesInMenuLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filesInMenuLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filesInMenuLbl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="recentFilesCountTextBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="recentFilesCountTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 33</value>
+  </data>
+  <data name="recentFilesCountTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="recentFilesCountTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="recentFilesCountTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="recentFilesCountTextBox.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;recentFilesCountTextBox.Name" xml:space="preserve">
+    <value>recentFilesCountTextBox</value>
+  </data>
+  <data name="&gt;&gt;recentFilesCountTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recentFilesCountTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recentFilesCountTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="listLbl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="listLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 33</value>
+  </data>
+  <data name="listLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 16</value>
+  </data>
+  <data name="listLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="listLbl.Text" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="&gt;&gt;listLbl.Name" xml:space="preserve">
+    <value>listLbl</value>
+  </data>
+  <data name="&gt;&gt;listLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;listLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="topGbox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="topGbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="topGbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 5</value>
+  </data>
+  <data name="topGbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 8</value>
+  </data>
+  <data name="topGbox.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;topGbox.Name" xml:space="preserve">
+    <value>topGbox</value>
+  </data>
+  <data name="&gt;&gt;topGbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;topGbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;topGbox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <metadata name="recentFilesLbl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="recentFilesLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 5</value>
+  </data>
+  <data name="recentFilesLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 16</value>
+  </data>
+  <data name="recentFilesLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="recentFilesLbl.Text" xml:space="preserve">
+    <value>Recent Files</value>
+  </data>
+  <data name="&gt;&gt;recentFilesLbl.Name" xml:space="preserve">
+    <value>recentFilesLbl</value>
+  </data>
+  <data name="&gt;&gt;recentFilesLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recentFilesLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recentFilesLbl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>RecentFilesOptionsPage</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>CodeBuilder.WinForm.UI.BaseOptionsPage, CodeBuilder, Version=1.0.11.1210, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>

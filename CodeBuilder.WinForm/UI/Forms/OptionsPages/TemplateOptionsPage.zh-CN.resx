@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="templatesLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="templatesLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 5</value>
+  </data>
+  <data name="templatesLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="templatesLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="templatesLbl.Text" xml:space="preserve">
+    <value>模板列表</value>
+  </data>
+  <data name="&gt;&gt;templatesLbl.Name" xml:space="preserve">
+    <value>templatesLbl</value>
+  </data>
+  <data name="&gt;&gt;templatesLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;templatesLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;templatesLbl.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="topGbx.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="topGbx.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="topGbx.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 5</value>
+  </data>
+  <data name="topGbx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 8</value>
+  </data>
+  <data name="topGbx.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;topGbx.Name" xml:space="preserve">
+    <value>topGbx</value>
+  </data>
+  <data name="&gt;&gt;topGbx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;topGbx.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;topGbx.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="templateListbox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="templateListbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 30</value>
+  </data>
+  <data name="templateListbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 303</value>
+  </data>
+  <data name="templateListbox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;templateListbox.Name" xml:space="preserve">
+    <value>templateListbox</value>
+  </data>
+  <data name="&gt;&gt;templateListbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;templateListbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;templateListbox.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="engineCombox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="engineCombox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 60</value>
+  </data>
+  <data name="engineCombox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="engineCombox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;engineCombox.Name" xml:space="preserve">
+    <value>engineCombox</value>
+  </data>
+  <data name="&gt;&gt;engineCombox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;engineCombox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;engineCombox.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="languageCombox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="languageCombox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 30</value>
+  </data>
+  <data name="languageCombox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="languageCombox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;languageCombox.Name" xml:space="preserve">
+    <value>languageCombox</value>
+  </data>
+  <data name="&gt;&gt;languageCombox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageCombox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;languageCombox.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="removeBtn.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 210</value>
+  </data>
+  <data name="removeBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 23</value>
+  </data>
+  <data name="removeBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="removeBtn.Text" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="&gt;&gt;removeBtn.Name" xml:space="preserve">
+    <value>removeBtn</value>
+  </data>
+  <data name="&gt;&gt;removeBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;removeBtn.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="newsaveBtn.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="newsaveBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 210</value>
+  </data>
+  <data name="newsaveBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 23</value>
+  </data>
+  <data name="newsaveBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="newsaveBtn.Text" xml:space="preserve">
+    <value>新增/保存</value>
+  </data>
+  <data name="&gt;&gt;newsaveBtn.Name" xml:space="preserve">
+    <value>newsaveBtn</value>
+  </data>
+  <data name="&gt;&gt;newsaveBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newsaveBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;newsaveBtn.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="fileNameTextbox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fileNameTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 120</value>
+  </data>
+  <data name="fileNameTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 20</value>
+  </data>
+  <data name="fileNameTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;fileNameTextbox.Name" xml:space="preserve">
+    <value>fileNameTextbox</value>
+  </data>
+  <data name="&gt;&gt;fileNameTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileNameTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fileNameTextbox.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="displayNameTxtbox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="displayNameTxtbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 90</value>
+  </data>
+  <data name="displayNameTxtbox.MaxLength" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="displayNameTxtbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="displayNameTxtbox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;displayNameTxtbox.Name" xml:space="preserve">
+    <value>displayNameTxtbox</value>
+  </data>
+  <data name="&gt;&gt;displayNameTxtbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;displayNameTxtbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;displayNameTxtbox.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="languageLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="languageLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 30</value>
+  </data>
+  <data name="languageLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="languageLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="languageLbl.Text" xml:space="preserve">
+    <value>语言:</value>
+  </data>
+  <data name="&gt;&gt;languageLbl.Name" xml:space="preserve">
+    <value>languageLbl</value>
+  </data>
+  <data name="&gt;&gt;languageLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;languageLbl.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="engineLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="engineLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 60</value>
+  </data>
+  <data name="engineLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="engineLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="engineLbl.Text" xml:space="preserve">
+    <value>引擎:</value>
+  </data>
+  <data name="&gt;&gt;engineLbl.Name" xml:space="preserve">
+    <value>engineLbl</value>
+  </data>
+  <data name="&gt;&gt;engineLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;engineLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;engineLbl.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="nameLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nameLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 90</value>
+  </data>
+  <data name="nameLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="nameLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="nameLbl.Text" xml:space="preserve">
+    <value>显示名称:</value>
+  </data>
+  <data name="&gt;&gt;nameLbl.Name" xml:space="preserve">
+    <value>nameLbl</value>
+  </data>
+  <data name="&gt;&gt;nameLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nameLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nameLbl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="fileNameLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fileNameLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 120</value>
+  </data>
+  <data name="fileNameLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="fileNameLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="fileNameLbl.Text" xml:space="preserve">
+    <value>文件:</value>
+  </data>
+  <data name="&gt;&gt;fileNameLbl.Name" xml:space="preserve">
+    <value>fileNameLbl</value>
+  </data>
+  <data name="&gt;&gt;fileNameLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileNameLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fileNameLbl.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="editBtn.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="editBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 210</value>
+  </data>
+  <data name="editBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
+  </data>
+  <data name="editBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="editBtn.Text" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="&gt;&gt;editBtn.Name" xml:space="preserve">
+    <value>editBtn</value>
+  </data>
+  <data name="&gt;&gt;editBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;editBtn.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="openFileDialogBtn.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="openFileDialogBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>430, 118</value>
+  </data>
+  <data name="openFileDialogBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="openFileDialogBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="openFileDialogBtn.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;openFileDialogBtn.Name" xml:space="preserve">
+    <value>openFileDialogBtn</value>
+  </data>
+  <data name="&gt;&gt;openFileDialogBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialogBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;openFileDialogBtn.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="noteTextLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noteTextLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>246, 276</value>
+  </data>
+  <data name="noteTextLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 60</value>
+  </data>
+  <data name="noteTextLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;noteTextLbl.Name" xml:space="preserve">
+    <value>noteTextLbl</value>
+  </data>
+  <data name="&gt;&gt;noteTextLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noteTextLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;noteTextLbl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="noteLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noteLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
+  </data>
+  <data name="noteLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 275</value>
+  </data>
+  <data name="noteLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="noteLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="noteLbl.Text" xml:space="preserve">
+    <value>说明:</value>
+  </data>
+  <data name="&gt;&gt;noteLbl.Name" xml:space="preserve">
+    <value>noteLbl</value>
+  </data>
+  <data name="&gt;&gt;noteLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noteLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;noteLbl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Template Text File (*.txt)|*.txt</value>
+  </data>
+  <data name="openFileDialog.Title" xml:space="preserve">
+    <value>选择模板文本文件</value>
+  </data>
+  <data name="getItFromOnlineBtn.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="getItFromOnlineBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 244</value>
+  </data>
+  <data name="getItFromOnlineBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 23</value>
+  </data>
+  <data name="getItFromOnlineBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="getItFromOnlineBtn.Text" xml:space="preserve">
+    <value>从网络获取模板</value>
+  </data>
+  <data name="&gt;&gt;getItFromOnlineBtn.Name" xml:space="preserve">
+    <value>getItFromOnlineBtn</value>
+  </data>
+  <data name="&gt;&gt;getItFromOnlineBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;getItFromOnlineBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;getItFromOnlineBtn.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="prefixTxtBox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="prefixTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 150</value>
+  </data>
+  <data name="prefixTxtBox.MaxLength" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="prefixTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="prefixTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;prefixTxtBox.Name" xml:space="preserve">
+    <value>prefixTxtBox</value>
+  </data>
+  <data name="&gt;&gt;prefixTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prefixTxtBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;prefixTxtBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="prefixLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="prefixLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 150</value>
+  </data>
+  <data name="prefixLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="prefixLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="prefixLbl.Text" xml:space="preserve">
+    <value>前缀:</value>
+  </data>
+  <data name="&gt;&gt;prefixLbl.Name" xml:space="preserve">
+    <value>prefixLbl</value>
+  </data>
+  <data name="&gt;&gt;prefixLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prefixLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;prefixLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="suffixLbl.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="suffixLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 180</value>
+  </data>
+  <data name="suffixLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="suffixLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="suffixLbl.Text" xml:space="preserve">
+    <value>后缀:</value>
+  </data>
+  <data name="&gt;&gt;suffixLbl.Name" xml:space="preserve">
+    <value>suffixLbl</value>
+  </data>
+  <data name="&gt;&gt;suffixLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;suffixLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;suffixLbl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="suffixTxtBox.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="suffixTxtBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 180</value>
+  </data>
+  <data name="suffixTxtBox.MaxLength" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="suffixTxtBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="suffixTxtBox.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;suffixTxtBox.Name" xml:space="preserve">
+    <value>suffixTxtBox</value>
+  </data>
+  <data name="&gt;&gt;suffixTxtBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;suffixTxtBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;suffixTxtBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
+    <value>openFileDialog</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TemplateOptionsPage</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>CodeBuilder.WinForm.UI.BaseOptionsPage, CodeBuilder, Version=1.0.11.1210, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+</root>
